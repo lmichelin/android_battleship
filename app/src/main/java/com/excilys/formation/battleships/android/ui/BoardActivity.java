@@ -21,11 +21,18 @@ import java.util.Locale;
 import battleships.formation.excilys.com.battleships.R;
 
 
-public class BoardActivity extends AppCompatActivity {
+public class BoardActivity extends AppCompatActivity implements BoardGridFragment.BoardGridFragmentListener {
     private static final String TAG = BoardActivity.class.getSimpleName();
 
+    @Override
+    public void onTileClick(int id, int x, int y) {
+        if (id == BoardController.HITS_FRAGMENT) {
+            doPlayerTurn(x, y);
+        }
+    }
+
     private static class Default {
-        private static final int TURN_DELAY = 1000; // ms
+        private static final int TURN_DELAY = 100; // ms
     }
 
     /* ***
@@ -83,7 +90,12 @@ public class BoardActivity extends AppCompatActivity {
                 gotoScoreActivity();
             }
         } else {
-            // TODO sleep a while...
+//            // TODO sleep a while...
+            mDone = updateScore();
+            if (mDone) {
+                gotoScoreActivity();
+            }
+            sleep(Default.TURN_DELAY);
             mViewPager.setCurrentItem(BoardController.SHIPS_FRAGMENT);
             mViewPager.setEnableSwipe(false);
             doOpponentTurn();
@@ -146,7 +158,7 @@ public class BoardActivity extends AppCompatActivity {
 
     private void gotoScoreActivity() {
         Intent intent = new Intent(this, ScoreActivity.class);
-        intent.putExtra(ScoreActivity.Extra.WIN, !mOpponent.lose);
+        intent.putExtra(ScoreActivity.Extra.WIN, mOpponent.lose);
         startActivity(intent);
     }
 
@@ -215,7 +227,10 @@ public class BoardActivity extends AppCompatActivity {
             case MISS:
                 msg = hit.toString();
                 break;
-            case STIKE:
+            case STRIKE:
+                msg = hit.toString();
+                break;
+            case ALREADY_STRIKE:
                 msg = hit.toString();
                 break;
             default:
@@ -237,5 +252,10 @@ public class BoardActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

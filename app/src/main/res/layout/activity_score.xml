@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-
         android:text="@string/win"
         android:textColor="@color/colorWin"
         android:textAlignment="center"
@@ -25,7 +24,7 @@
         android:layout_centerInParent="true"
 
 
-        android:text="Perdu !"
+        android:text="@string/lose"
         android:textColor="@color/colorLose"
         android:visibility="gone"
         android:textAppearance="@android:style/TextAppearance.Large"

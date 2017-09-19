@@ -155,8 +155,7 @@ public class BoardGridFragment extends Fragment {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState)
-    {
+    public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putIntegerArrayList(Args.PENDING_DRAWS, mPendingDraws);
     }
