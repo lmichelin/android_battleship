@@ -61,8 +61,10 @@ public class BoardController implements IBoard {
             throw new IllegalArgumentException("Cannot put a Ship that does not implement DrawableShip.");
         }
 
+        // TODO Retrieve ship orientation
+
+
         // TODO this may be usefull
-//        AbstractShip.Orientation orientation = ship.getOrientation();
 //        switch (orientation) {
 //            case NORTH:
 //                y = y - ship.getLength() + 1;

@@ -146,7 +146,7 @@ public class BoardActivity extends AppCompatActivity {
 
     private void gotoScoreActivity() {
         Intent intent = new Intent(this, ScoreActivity.class);
-        intent.putExtra(ScoreActivity.Extra.WIN, !mOpponent.lose);
+        intent.putExtra(ScoreActivity.Extra.WIN, mOpponent.lose);
         startActivity(intent);
     }
 
