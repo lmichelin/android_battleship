@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '25.0.0'
+    buildToolsVersion "24.0.2"
     defaultConfig {
         applicationId "battleships.formation.excilys.com.battleships"
         minSdkVersion 15
@@ -32,6 +32,5 @@ dependencies {
     compile "com.android.support:appcompat-v7:$appcompat"
     compile "com.android.support:design:$appcompat"
     compile "com.android.support:support-v4:$appcompat"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }

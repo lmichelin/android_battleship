@@ -87,8 +87,7 @@ public class PutShipsActivity extends AppCompatActivity implements BoardGridFrag
             mCurrentShip++;
             updateNextShipNameToDisplay();
         } catch (Exception e) {
-            msg = (e.getMessage().equals("Ship overlays")) ? e.getMessage() : "Impossible de placer le bateau ici";
-            Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.put_ship_error, Toast.LENGTH_LONG).show();
         }
 
         if (mCurrentShip >= mShips.length) {

@@ -21,18 +21,11 @@ import java.util.Locale;
 import battleships.formation.excilys.com.battleships.R;
 
 
-public class BoardActivity extends AppCompatActivity implements BoardGridFragment.BoardGridFragmentListener {
+public class BoardActivity extends AppCompatActivity {
     private static final String TAG = BoardActivity.class.getSimpleName();
 
-    @Override
-    public void onTileClick(int id, int x, int y) {
-        if (id == BoardController.HITS_FRAGMENT) {
-            doPlayerTurn(x, y);
-        }
-    }
-
     private static class Default {
-        private static final int TURN_DELAY = 100; // ms
+        private static final int TURN_DELAY = 1000; // ms
     }
 
     /* ***
@@ -90,12 +83,7 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
                 gotoScoreActivity();
             }
         } else {
-//            // TODO sleep a while...
-            mDone = updateScore();
-            if (mDone) {
-                gotoScoreActivity();
-            }
-            sleep(Default.TURN_DELAY);
+            // TODO sleep a while...
             mViewPager.setCurrentItem(BoardController.SHIPS_FRAGMENT);
             mViewPager.setEnableSwipe(false);
             doOpponentTurn();
@@ -158,7 +146,7 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
 
     private void gotoScoreActivity() {
         Intent intent = new Intent(this, ScoreActivity.class);
-        intent.putExtra(ScoreActivity.Extra.WIN, mOpponent.lose);
+        intent.putExtra(ScoreActivity.Extra.WIN, !mOpponent.lose);
         startActivity(intent);
     }
 
@@ -227,10 +215,7 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
             case MISS:
                 msg = hit.toString();
                 break;
-            case STRIKE:
-                msg = hit.toString();
-                break;
-            case ALREADY_STRIKE:
+            case STIKE:
                 msg = hit.toString();
                 break;
             default:
@@ -252,10 +237,5 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void onBackPressed() {
-
     }
 }
