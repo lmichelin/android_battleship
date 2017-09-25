@@ -11,14 +11,13 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.excilys.formation.battleships.Board;
-import com.excilys.formation.battleships.Hit;
-import com.excilys.formation.battleships.Player;
-import com.excilys.formation.battleships.ship.AbstractShip;
-
 import java.util.Locale;
 
+import battleships.Board;
+import battleships.Hit;
+import battleships.Player;
 import battleships.formation.excilys.com.battleships.R;
+import battleships.ship.AbstractShip;
 
 
 public class BoardActivity extends AppCompatActivity {

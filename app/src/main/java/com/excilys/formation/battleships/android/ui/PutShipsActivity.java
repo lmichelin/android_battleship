@@ -11,11 +11,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.excilys.formation.battleships.ship.AbstractShip;
-
 import java.util.Locale;
 
 import battleships.formation.excilys.com.battleships.R;
+import battleships.ship.AbstractShip;
 
 public class PutShipsActivity extends AppCompatActivity implements BoardGridFragment.BoardGridFragmentListener {
     private static final String TAG = PutShipsActivity.class.getSimpleName();

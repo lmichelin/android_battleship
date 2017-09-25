@@ -1,11 +1,11 @@
 package com.excilys.formation.battleships.android.ui;
 
-import com.excilys.formation.battleships.Hit;
-import com.excilys.formation.battleships.IBoard;
 import com.excilys.formation.battleships.android.ui.ships.DrawableShip;
-import com.excilys.formation.battleships.ship.AbstractShip;
 
+import battleships.Hit;
+import battleships.IBoard;
 import battleships.formation.excilys.com.battleships.R;
+import battleships.ship.AbstractShip;
 
 public class BoardController implements IBoard {
 
