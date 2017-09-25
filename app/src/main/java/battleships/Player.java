@@ -21,6 +21,10 @@ public class Player implements Serializable {
     }
 
 
+    public Hit sendHit(int[] coords) {
+        return null;
+    }
+
     public AbstractShip[] getShips() {
         return ships;
     }

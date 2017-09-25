@@ -7,12 +7,15 @@ import java.util.List;
 import battleships.Board;
 import battleships.Player;
 import battleships.ship.AbstractShip;
+import battleships.ship.BattleShip;
 
 public class BattleShipsApplication extends Application {
 
     /* ***
      * Attributes
      */
+    private static BattleShipsApplication instance;
+
     private static BoardController mBoard;
     private static Board mOpponentBoard;
     private static Player[] mPlayers;
@@ -25,12 +28,17 @@ public class BattleShipsApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
     }
 
 
     /* ***
      * Methods
      */
+
+    public static BattleShipsApplication getInstance() {
+        return instance;
+    }
 
     public static Player[] getPlayers() {
         return mPlayers;
