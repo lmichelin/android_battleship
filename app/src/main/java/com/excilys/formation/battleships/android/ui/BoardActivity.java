@@ -112,6 +112,7 @@ public class BoardActivity extends AppCompatActivity {
                     publishProgress(DISPLAY_TEXT, makeHitMessage(true, coordinate, hit));
                     publishProgress(DISPLAY_HIT, String.valueOf(strike), String.valueOf(coordinate[0]), String.valueOf(coordinate[1]));
 
+                    mDone = updateScore();
                     sleep(Default.TURN_DELAY);
                 } while(strike && !mDone);
                 return mDone;
