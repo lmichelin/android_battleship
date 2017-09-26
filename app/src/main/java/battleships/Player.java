@@ -25,6 +25,9 @@ public class Player implements Serializable {
         return null;
     }
 
+    public void putShips() {
+    }
+
     public AbstractShip[] getShips() {
         return ships;
     }

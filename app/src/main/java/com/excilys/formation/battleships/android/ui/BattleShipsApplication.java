@@ -61,7 +61,7 @@ public class BattleShipsApplication extends Application {
             //TODO call Players's constructor
         }
 
-        //TODO insert putSHips() here
+        //TODO insert putShips() here by overriding player's method
     }
 
 }
