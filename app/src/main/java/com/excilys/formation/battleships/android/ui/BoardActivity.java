@@ -67,7 +67,7 @@ public class BoardActivity extends AppCompatActivity {
         mOpponent = BattleShipsApplication.getPlayers()[1];
     }
 
-    // TODO call me maybe
+    // TODO  call me maybe
     private void doPlayerTurn(int x, int y) {
         mPlayerTurn = false;
         Hit hit = mOpponentBoard.sendHit(x, y);
@@ -139,7 +139,6 @@ public class BoardActivity extends AppCompatActivity {
 
 
         }.execute();
-
 
     }
 
