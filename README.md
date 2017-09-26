@@ -286,3 +286,35 @@ Question :
 git add . -A
 git commit -m"bonus 1"
 ```
+
+ ### Bonus : Correctifs, ajout de fonctionnalités
+ - BoardActivity, PutShipsActivity, ScoreActivity
+
+Afin d'améliorer l'exprérience utilisateur, nous pouvons apporter quelques modifications.
+
+Dans toutes les `activités` :
+ - Gérer l'appuis sur le bouton retour du téléphone.
+
+Dans `PutShipsActivity`, après avoir poser tout les bateaux : 
+ - Afficher un bouton permettant de passer au Board. 
+ - Afficher un bouton permettant de recommencer le placement des bateaux.
+ - Remplacer le Toast par une snackbar.
+ - Informer l'utilisateur s'il clique lorsque tout les bateaux sont déjà placés.
+
+Dans `ScoreActivity`, après avoir terminé la partie :
+ - Afficher un bouton pour recommencer la partie.
+ - Afficher un bouton pour revenir au board.
+
+Dans `BoardActivity`, uniquement lorsque l'on revient après avoir terminer la partie : 
+ - Empêcher le joueur de cliquer sur une case déjà touchée (marqueur rouge)
+ - Empêcher le joueur de cliquer sur une case déjà manquée (marqueur gris )
+ - Empêcher le joueur de cliquer plusieurs fois d'affilé pendant son tour.
+
+ ### Bonus : Design
+  - PlayernameActivity, ScoreActivity
+  
+  Vous pouvez ajouter des images sur les activités ci-dessus, deux images sont déjà disponibles :
+  - welcome_background pour la page d'accueil qui correspond à PlayernameActivity.
+  - win_background pour la fin du jeu qui correspond à ScoreActivity.
+  
+  Vous pouvez également changer le logo de l'application ainsi que son nom dans le manifest.xml .
