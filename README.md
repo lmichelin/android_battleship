@@ -307,8 +307,14 @@ Dans `ScoreActivity`, après avoir terminé la partie :
 
 Dans `BoardActivity`, uniquement lorsque l'on revient après avoir terminer la partie : 
  - Empêcher le joueur de cliquer sur une case déjà touchée (marqueur rouge)
- - Empêcher le joueur de cliquer sur une case déjà manquée (marqueur gris )
+Dans `Board`, modifier la méthode `sendHit()` pour renvoyer Hit.ALREADY_STRIKE lorsque le bateau est déjà touché.
+ 
  - Empêcher le joueur de cliquer plusieurs fois d'affilé pendant son tour.
+Dans `BoardActivity`, modifier la méthode `onTitleClick()` pour appeller `doPlayerTurn()` que quand mPlayerTurn est à true.
+ 	
+ - Empêcher le joueur de cliquer sur une case déjà manquée (marqueur gris )
+Remplacer le paramètre boolean de la méthode `setHit()` par un Boolean. Il faut également changer l'interface `IBoard`.
+Dans la méthode `doPlayerTurn()` de `BoardActivity`, assigner Hit.ALREADY_MISSED au hit si `mBoardController.getHit(x,y)` est non null et false. Attention à ne plus appeller `setHit()` si le hit retourné est Hit.ALREADY_MISSED.
 
  ### Bonus : Design
   - PlayernameActivity, ScoreActivity
