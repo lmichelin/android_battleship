@@ -286,7 +286,19 @@ Question :
 git add . -A
 git commit -m"bonus 1"
 ```
+ ### Bonus : Cache de l'application
+ - SharedPreferences
+ Nous souhaitons ouvrir l'application directement sur la `putShipsActivity` lorsque le playername a déjà été défini une première fois, comme c'est la cas lors d'une connexion.
 
+Pour cela, dans `playerNameActivity`, vous devez initialiser une sharedPreferences de cette façon :
+`preferences = getApplicationContext().getSharedPreferences("Pref", MODE_PRIVATE);`
+
+Ensuite, il faut sauver le playername dans le cache à l'aide de la méthode `putString(key, value)` de cette façon :
+`preferences.edit().putString(key, value).apply();`
+
+Puis vérifier avec la méthode `getString(key, default value)` si un playername existe déjà dans le cache et dans ce cas, lancer `putShipsActivity`. 
+ 
+ 
  ### Bonus : Correctifs, ajout de fonctionnalités
  - BoardActivity, PutShipsActivity, ScoreActivity
 
