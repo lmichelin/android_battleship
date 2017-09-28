@@ -315,7 +315,7 @@ Dans `PutShipsActivity`, après avoir poser tout les bateaux :
  - Informer l'utilisateur s'il clique lorsque tout les bateaux sont déjà placés.
 
 Dans `ScoreActivity`, après avoir terminé la partie :
- - Afficher un bouton pour recommencer la partie.
+ - Afficher un bouton pour recommencer la partie avec une AlertDialog pour confirmer le choix.
  - Afficher un bouton pour revenir au board.
 
 Dans `BoardActivity`, uniquement lorsque l'on revient après avoir terminer la partie : 
@@ -329,6 +329,33 @@ Dans `BoardActivity`, modifier la méthode `onTitleClick()` pour appeller `doPla
 Remplacer le paramètre boolean de la méthode `setHit()` par un Boolean. Il faut également changer l'interface `IBoard`.
 Dans la méthode `doPlayerTurn()` de `BoardActivity`, assigner Hit.ALREADY_MISSED au hit si `mBoardController.getHit(x,y)` est non null et false. Attention à ne plus appeller `setHit()` si le hit retourné est Hit.ALREADY_MISSED.
 
+
+Exemple d'AlertDialog :
+
+
+`public void openDialogToRestart() {
+ 
+ 	// TODO Changer l'activity
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(--MyActivity--.this);
+	
+	//TODO Ajouter un message à la dialog et l'empêcher qu'elle soit fermée sans cliquer sur un bouton.
+	//TODO Utiliser pour cela .setCancelable(boolean) sur le builder.
+        alertDialogBuilder.setMessage( -- monMessage --);
+
+        alertDialogBuilder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+		// TODO Recommencer le jeu
+        });
+
+        // TODO Ajouter un negativeButton qui ferme la dialog, en se basant sur l'exemple ci-dessus.
+	// TODO Utiliser dialog.cancel()
+
+        // Créer l' Alert dialog en utilisant la méthode .create() sur le builder.
+        AlertDialog alertDialog = -- create --;
+
+        // Afficher l'Alert dialog en appelant la méthode .show() sur celle-ci.
+        
+    }`
+    
  ### Bonus : Design
   - PlayernameActivity, ScoreActivity
   
