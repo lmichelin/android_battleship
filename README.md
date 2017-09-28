@@ -288,6 +288,7 @@ git commit -m"bonus 1"
 ```
  ### Bonus : Cache de l'application
  - SharedPreferences
+ 
  Nous souhaitons ouvrir l'application directement sur la `putShipsActivity` lorsque le playername a déjà été défini une première fois, comme c'est la cas lors d'une connexion.
 
 Pour cela, dans `playerNameActivity`, vous devez initialiser une sharedPreferences de cette façon :
