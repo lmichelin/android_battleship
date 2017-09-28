@@ -333,7 +333,7 @@ Dans la méthode `doPlayerTurn()` de `BoardActivity`, assigner Hit.ALREADY_MISSE
 Exemple d'AlertDialog :
 
 
-`public void openDialogToRestart() {
+`public void openDialogToRestart() {`
  
  	// TODO Changer l'activity
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(--MyActivity--.this);
@@ -354,7 +354,7 @@ Exemple d'AlertDialog :
 
         // Afficher l'Alert dialog en appelant la méthode .show() sur celle-ci.
         
-    }`
+    }
     
  ### Bonus : Design
   - PlayernameActivity, ScoreActivity
