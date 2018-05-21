@@ -85,8 +85,8 @@ public class ExampleActivity extends AppCompatActivity {
 }
 ```
 Travail à faire
- - Créer un package "anduid.ui" dans le package de votre projet. Ce package contiendra tout ce qui est propre à l'affichage (activitées, ...)
- - Créer une Activity "PlayerNameActivity", dont le "root view" est un "**RelativeLayout**"
+ * Un package "anduid.ui" est déjà crée dans le projet. Ce package contiendra tout ce qui est propre à l'affichage (activitées, ...)
+ - Dans l'activity "PlayerNameActivity" déjà existante, définir un "root view" ( layout principal ) de type "**RelativeLayout**"
  - Ajouter un EditText pour entrer le nom du joueur
  - Ajouter un TextView au dessus, avec la mention "Entrez votre nom"
  - Ajouter un boutton pour valider le champ.
