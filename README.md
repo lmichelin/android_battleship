@@ -14,11 +14,9 @@ Le programme devra répondre aux spécifications suivantes :
  - jouer contre une IA.
 
 Le TP 2: "Les bases de Java - BattleShips CLI" doit au moins être avancé jusqu'à l'exercice 6 "Envoyer des frappes" pour suivre ce TP.
-Commencez le TP par copier-coller le TP 2 dans votre projet (package `com.excilys.formation.battleships`), et supprimer les classes possédant une fonction main().
-
-Vous aurez immédiatement des erreurs de compilation. Vous devez :
-  - Changer le constructeur de Player, pour ajouter un premier paramètre 'name' de type **String**
-  - Dans player, rendre les champs 'lose' et 'destroyedCount' publiques.
+Commencez le TP en clonant le projet https://github.com/StephanCaltot/formation-android-battleships.git .
+Ouvrez-le ensuite avec Android Studio et téléchargez tout les supports demandés.
+Pour lancer l'application il vous suffit de "run" la classe PlayerNameActivity.
 
 ### Exercice 1 :  Saisie du nom du joueur.
 ##### Notions abordées:
