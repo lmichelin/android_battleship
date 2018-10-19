@@ -150,4 +150,10 @@ public class PutShipsActivity extends AppCompatActivity implements BoardGridFrag
             mShipName.setText(mShips[mCurrentShip].getName());
         }
     }
+
+    @Override
+    public void onBackPressed()
+    {
+
+    }
 }
