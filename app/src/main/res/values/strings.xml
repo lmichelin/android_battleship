@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BattleShips</string>
+    <string name="app_name">Battleship</string>
 
     <string name="board_hits_title">frappes</string>
     <string name="board_ships_title">navires</string>
