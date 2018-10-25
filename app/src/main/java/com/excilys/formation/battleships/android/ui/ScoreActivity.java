@@ -1,8 +1,10 @@
 package com.excilys.formation.battleships.android.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import battleships.formation.excilys.com.battleships.R;
@@ -20,7 +22,7 @@ public class ScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_score);
 
         boolean win = getIntent().getExtras().getBoolean(Extra.WIN);
-        TextView winLabel = (TextView) findViewById(R.id.score_win_label);
+        ImageView winLabel = (ImageView) findViewById(R.id.score_win_label);
         TextView loseLabel = (TextView) findViewById(R.id.score_lose_label);
 
         int winVisible = View.VISIBLE, loseVisible = View.VISIBLE;
@@ -38,6 +40,9 @@ public class ScoreActivity extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-
+        Intent intent = new Intent(ScoreActivity.this, PlayerNameActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 }

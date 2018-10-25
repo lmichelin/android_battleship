@@ -117,6 +117,25 @@
                         android:text="@string/west" />
                 </RadioGroup>
 
+                <Button
+                    android:visibility="invisible"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_enter_name"
+                    android:id="@+id/play_btn_start"
+                    android:onClick="onClickButton"
+                    android:layout_below="@+id/putship_radios_orientation" />
+
+                <Button
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_restart"
+                    android:id="@+id/play_btn_restart"
+                    android:onClick="onClickRestart"
+                    android:layout_below="@+id/play_btn_start" />
+
             </RelativeLayout>
 
         </RelativeLayout>

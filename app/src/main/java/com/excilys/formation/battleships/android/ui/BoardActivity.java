@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -27,7 +28,11 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
     @Override
     public void onTileClick(int id, int x, int y) {
         if (id == BoardController.HITS_FRAGMENT) {
-            doPlayerTurn(x, y);
+            if (mBoardController.getHit(x, y) == null) {
+                doPlayerTurn(x, y);
+            } else {
+                Toast.makeText(BoardActivity.this, "Déjà frappé à cet endroit !", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -147,9 +152,7 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
                 }
             }
 
-
         }.execute();
-
     }
 
     private void doOpponentTurn() {
@@ -161,7 +164,6 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
                 Hit hit;
                 boolean strike;
                 do {
-                    sleep(Default.TURN_DELAY);
                     publishProgress("...");
                     sleep(Default.TURN_DELAY);
 
@@ -197,9 +199,7 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
                 }
             }
 
-
         }.execute();
-
     }
 
     private void gotoScoreActivity() {
@@ -300,6 +300,9 @@ public class BoardActivity extends AppCompatActivity implements BoardGridFragmen
     @Override
     public void onBackPressed()
     {
-
+        Intent intent = new Intent(BoardActivity.this, PlayerNameActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 }

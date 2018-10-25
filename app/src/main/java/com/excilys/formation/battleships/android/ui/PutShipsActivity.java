@@ -1,11 +1,14 @@
 package com.excilys.formation.battleships.android.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -88,11 +91,13 @@ public class PutShipsActivity extends AppCompatActivity implements BoardGridFrag
         } catch (Exception e) {
             Toast.makeText(this, R.string.put_ship_error, Toast.LENGTH_LONG).show();
         }
-
-        if (mCurrentShip >= mShips.length) {
-            gotoBoardActivity();
-        } else {
+        if (mCurrentShip < mShips.length) {
             updateRadioButton();
+        } else {
+            findViewById(R.id.ship_name).setVisibility(View.INVISIBLE);
+            findViewById(R.id.orientation_text).setVisibility(View.INVISIBLE);
+            findViewById(R.id.putship_radios_orientation).setVisibility(View.INVISIBLE);
+            findViewById(R.id.play_btn_start).setVisibility(View.VISIBLE);
         }
     }
 
@@ -151,9 +156,26 @@ public class PutShipsActivity extends AppCompatActivity implements BoardGridFrag
         }
     }
 
+    public void onClickButton(View v) {
+        if (mCurrentShip >= mShips.length) {
+            gotoBoardActivity();
+        } else {
+            Toast.makeText(this, R.string.put_ship_error_button, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void onClickRestart(View v) {
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("Pref", MODE_PRIVATE);
+        String name = preferences.getString("player_name", null);
+        BattleShipsApplication.getmGame().init(name);
+    }
+
     @Override
     public void onBackPressed()
     {
-
+        Intent intent = new Intent(PutShipsActivity.this, PlayerNameActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 }
